@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 4 Exercises Lvl 2</title>
+</head>
+
+<body>
+    <script>
+        //1. Write a program which tells the number of days in a month.
+        // const month = prompt("enter month:")
+        // function program(month) {
+        //     switch (month) {
+        //         case "Januari": case "Maret": case "Mei": case "Juli": case "Agustus": case "Oktober": case "Desember": return `${month} has 31 days`; break;
+        //         case "Februari": case "April": case "Juni": case "September": case "November": return `${month} has 30 days`; break;
+        //         default: return "tolong masukan bulan dengan benar";
+        //     }
+        // }
+        // console.log(program(month));
+
+        //2. Write a program which tells the number of days in a month, now consider leap year.
+        const month = prompt("enter month:"),
+            year = parseInt(prompt("enter the years", `${new Date().getFullYear()}`));
+        function program(month, year) {
+            switch (month) {
+                case "Januari": case "Maret": case "Mei": case "Juli": case "Agustus": case "Oktober": case "Desember": return `${month} has 31 days`; break;
+                case "April": case "Juni": case "September": case "November": return `${month} has 30 days`; break;
+                case "Februari": if ((year % 4 == 0) && (year % 100 != 0) || (year % 400 == 0)) {
+                    return `${month} has 29 days`;
+                } else {
+                    return `${month} has 28 days`;
+                }; break;
+                default: return "tolong masukan bulan dengan benar";
+            }
+
+        }
+        console.log(program(month, year));
+    </script>
+</body>
+
+</html>
