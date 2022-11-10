@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 5</title>
+</head>
+
+<body>
+    <script>
+        const countries = [
+            'Albania',
+            'Bolivia',
+            'Canada',
+            'Denmark',
+            'Ethiopia',
+            'Finland',
+            'Germany',
+            'Hungary',
+            'Ireland',
+            'Japan',
+            'Kenya'
+        ]
+
+        const webTechs = [
+            'HTML',
+            'CSS',
+            'JavaScript',
+            'React',
+            'Redux',
+            'Node',
+            'MongoDB'
+        ]
+        //1. Declare an empty array;
+        const arr1 = Array(),
+            arr2 = new Array(),
+            arr3 = [];
+        console.log(arr1)
+        console.log(arr2)
+        console.log(arr3)
+
+        //2. Declare an array with more than 5 number of elements
+        const arr5 = new Array(5);
+        console.log(arr5);
+
+        //3.Find the length of your array
+        console.log(countries.length);
+        console.log(webTechs.length);
+
+        //4. Get the first item, the middle item and the last item of the array
+        let firstItem = countries[0],
+            middleIten = countries[5],
+            lastItem = countries[10];
+
+        console.log(firstItem, middleIten, lastItem);
+
+        //5. Declare an array called mixedDataTypes, put different data types in the array and find the length of the array. The array size should be greater than 5
+        const arr6 = new Array("riki", "junizar", "handsome", "banjar", 25, false);
+        console.log(arr6);
+        console.log(arr6.length);
+
+        //6.Declare an array variable name itCompanies and assign initial values Facebook, Google, Microsoft, Apple, IBM, Oracle and Amazon
+        let itCompanies = Array("Facebook", "Google", "Microsoft", "Apple", "IBM", "Oracle", "Amazon")
+
+        //7. Print the array using console.log()
+        console.log(itCompanies);
+
+        //8. Print the number of companies in the array
+        console.log(itCompanies.length);
+
+        //9. Print the first company, middle and last company
+        console.log(itCompanies[0]);
+        console.log(itCompanies[3]);
+        console.log(itCompanies[6]);
+
+        //10.Print out each company
+        for (const company of itCompanies) {
+            console.log(company);
+        }
+
+        //11. Change each company name to uppercase one by one and print them out
+        for (const company of itCompanies) {
+            console.log(company.toUpperCase());
+        }
+
+        //12. Print the array like as a sentence: Facebook, Google, Microsoft, Apple, IBM,Oracle and Amazon are big IT companies.
+        const sentence = itCompanies.join(", ");
+        console.log(sentence);
+
+        //13.Check if a certain company exists in the itCompanies array. If it exist return the company else return a company is not found
+        // const inputUser = prompt("ente company:"),
+        //     inputCompany = inputUser.slice(0, 1).toUpperCase() + inputUser.substr(1);
+
+        // function checkCompany(c) {
+        //     if (itCompanies.indexOf(c) == -1) {
+        //         return "company is not found"
+        //     } else {
+        //         return `${c} is found`
+        //     }
+        // }
+        // console.log(checkCompany(inputCompany));
+        //14. Filter out companies which have more than one 'o' without the filter method
+        function filter(c) {
+            let res = [];
+            console.log(c.indexOf())
+            if (c.indexOf("o") == -1) {
+                console.log(c)
+            } else (
+                res.push(c)
+            )
+            return res
+        }
+
+        //15. Sort the array using sort() method 
+        const sorting = itCompanies.sort();
+        console.log(sorting);
+
+        //16. Reverse the array using reverse() method
+        const reverse = sorting.reverse();
+        console.log(reverse);
+
+        //17. Slice out the first 3 companies from the array
+        console.log(reverse.slice(0, 3));
+
+        //18. Slice out the last 3 companies from the array
+        console.log(reverse);
+        console.log(reverse.slice(4, 7));
+
+        //19. Slice out the first 3 companies from the array
+        console.log(reverse.slice(2, 5));
+        console.log(reverse);
+
+        //20.Remove the first IT company from the array
+        console.log(reverse.splice(0, 1));
+        console.log(reverse);
+
+        //21. Remove the middle IT company or companies from the array
+        console.log(reverse.splice(2, 2))
+        console.log(reverse);
+
+        //22.Remove the last IT company from the array
+        console.log(reverse.splice(4, 2))
+        console.log(reverse);
+
+        //23.Remove all IT companies
+        console.log(reverse.splice())
+
+
+
+    </script>
+</body>
+
+</html>

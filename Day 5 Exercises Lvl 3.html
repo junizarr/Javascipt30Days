@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 5 Exercises Lvl 3</title>
+</head>
+
+<body>
+    <script>
+        //1. The following is an array of 10 students ages:
+        /* Sort the array and find the min and max age
+            Find the median age(one middle item or two middle items divided by two)
+            Find the average age(all items divided by number of items)
+            Find the range of the ages(max minus min)
+            Compare the value of (min - average) and (max - average), use abs() method */
+
+        const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24].sort()
+
+
+        console.log(ages);// hasil sorting
+        console.log(Math.max(...ages)); //max age
+        console.log(Math.min(...ages)); //min age
+        console.log((ages[5] + ages[6]) / 2);// median age
+        console.log(ages.reduce((a, c) => { let d = a + c; return d / 2 })); // average age
+        console.log(ages[ages.length - 1] - ages[0])// range age high and min
+        let minAge = Math.min(...ages)
+        let maxAge = Math.max(...ages)
+        let average = 0;
+        for (const age of ages) {
+            average += age / ages.length;
+        }
+        let min = Math.abs(minAge - average);
+        let max = Math.abs(maxAge - average);
+        let Compare = min > max
+
+        //2. Slice the first ten countries from the countries array
+        const countries = [
+            'Albania',
+            'Bolivia',
+            'Canada',
+            'Denmark',
+            'Ethiopia',
+            'Finland',
+            'Germany',
+            'Hungary',
+            'Ireland',
+            'Japan',
+            'Kenya'
+        ]
+
+        let result = countries.slice(0, 10);
+        console.log(result);
+
+        // Find the middle country(ies) in the countries array
+        const midleCountry = countries[6]
+        console.log(midleCountry);
+
+        // 3.Divide the countries array into two equal arrays if it is even. If countries array is not even , one more country for the first half.
+
+        let evenCountry = [],
+            oddCountry = [];
+
+        function divide(country) {
+            country.forEach((c, i) => {
+                if (i % 2 == 0) {
+                    evenCountry.push(c);
+                } else {
+                    oddCountry.push(c);
+                }
+            })
+        }
+        divide(countries);
+        console.log(evenCountry);
+        console.log(oddCountry);
+
+    </script>
+</body>
+
+</html>

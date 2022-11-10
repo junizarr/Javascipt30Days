@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 5 Exercises Lvl 2</title>
+</head>
+
+<body>
+    <script type="module">
+        //1. Create a separate countries.js file and store the countries array in to this file, create a separate file web_techs.js and store the webTechs array in to this file. Access both file in main.js file
+        // import countries from "/countries.js"
+        // import web_techs from "/web_techs.js"
+
+        //2.First remove all the punctuations and change the string to array and count the number of words in the array
+        let text =
+            'I love teaching and empowering people. I teach HTML, CSS, JS, React, Python.';
+
+        let text1 = text.split(" ");
+        console.log(text1);
+        console.log(text1.length
+        );
+
+        //3. In the following shopping cart add, remove, edit items
+        /* add 'Meat' in the beginning of your shopping cart if it has not been already added
+            add Sugar at the end of you shopping cart if it has not been already added
+            remove 'Honey' if you are allergic to honey
+            modify Tea to 'Green Tea'*/
+
+        const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey']
+
+        function addMeat(m) {
+            if (shoppingCart[0] != "meat") {
+                shoppingCart.unshift(m)
+            }
+        }
+
+        // addMeat("meat");
+        // console.log(shoppingCart);
+
+        function addSugar(s) {
+            if (shoppingCart[shoppingCart.length - 1] != "Sugar") {
+                shoppingCart.push(s)
+                console.log("add sugar")
+            }
+        }
+        // shoppingCart.push("Sugar")
+        // addSugar("sugar")
+        // console.log(shoppingCart);
+
+        shoppingCart.pop();
+        console.log(shoppingCart);
+
+        shoppingCart[2] = "Green Tea"
+        console.log(shoppingCart);
+
+        //4. In countries array check if 'Ethiopia' exists in the array if it exists print 'ETHIOPIA'. If it does not exist add to the countries list.
+        const countries = [
+            'Albania',
+            'Bolivia',
+            'Canada',
+            'Denmark',
+            'Ethiopia',
+            'Finland',
+            'Germany',
+            'Hungary',
+            'Ireland',
+            'Japan',
+            'Kenya'
+        ]
+
+        // function check(s) {
+        //     if (c == "Ethiopia") {
+        //         console.log(c)
+        //     } else {
+        //         countries.push(c)
+        //     }
+        //     countries.sort();
+        // }
+
+        // check("Ethiopia");
+        // console.log(countries);
+
+        //5.In the webTechs array check if Sass exists in the array and if it exists print 'Sass is a CSS preprocess'. If it does not exist add Sass to the array and print the array.
+        const webTechs = [
+            'HTML',
+            'CSS',
+            'JavaScript',
+            'React',
+            'Redux',
+            'Node',
+            'MongoDB'
+        ]
+
+        function check() {
+            let s = "sass"
+
+            if (s.slice(0, 1).toUpperCase() + s.substr(1) == "Sass") {
+                console.log("Sass is a CSS preprocess")
+            } else {
+                countries.push(s)
+                countries.sort();
+                console.log(countries);
+            }
+        }
+
+        check();
+
+        //6.  Concatenate the following two variables and store it in a fullStack variable.
+        const frontEnd = ['HTML', 'CSS', 'JS', 'React', 'Redux']
+        const backEnd = ['Node', 'Express', 'MongoDB']
+
+        const fullStack = frontEnd.concat(backEnd);
+        console.log(fullStack);
+    </script>
+</body>
+
+</html>
