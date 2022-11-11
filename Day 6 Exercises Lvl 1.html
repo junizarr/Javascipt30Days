@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 6 Exercises Lvl 1</title>
+</head>
+
+<body>
+    <script>
+        //1. Iterate 0 to 10 using for loop, do the same using while and do while loop
+        // for (let i = 0; i <= 10; i++) {
+        //     console.log(i);
+        // }
+        // let j = 0
+        // while (j <= 10) {
+        //     console.log(j);
+        //     j++;
+        // }
+        // let y = 0;
+        // do {
+        //     console.log(y);
+        //     y++;
+        // } while (y <= 10)
+
+        //2. Iterate 10 to 0 using for loop, do the same using while and do while loop
+        // for (let i = 10; i >= 0; i--) {
+        //     console.log(i);
+        // }
+        // let j = 10;
+        // while (j >= 0) {
+        //     console.log(j);
+        //     j--;
+        // }
+        // let y = 10;
+        // do {
+        //     console.log(y);
+        //     y--;
+        // } while (y >= 0)
+
+        //3. Iterate 0 to n using for loop
+        // const n = parseInt(prompt("enter number n :", "number"));
+
+        // for (let i = 0; i <= n; i++) {
+        //     console.log(i);
+        // }
+
+        //4. Write a loop that makes the following pattern using console.log():
+        /*
+        #
+        ##
+        ###
+        ####
+        #####
+        ######
+        #######*/
+
+        let hash = "";
+        for (let i = 0; i <= 6; i++) {
+            for (let j = 0; j <= i; j++) {
+                hash += "#"
+            }
+            hash += "\n"
+        }
+
+        console.log(hash);
+
+        //5. Use loop to print the following pattern:
+        /*0 x 0 = 0
+        1 x 1 = 1
+        2 x 2 = 4
+        3 x 3 = 9
+        4 x 4 = 16
+        5 x 5 = 25
+        6 x 6 = 36
+        7 x 7 = 49
+        8 x 8 = 64
+        9 x 9 = 81
+        10 x 10 = 100*/
+
+        for (let i = 0; i <= 10; i++) {
+            console.log(`${i} x ${i} = ${i * i}`)
+        }
+
+        //6.  Using loop print the following pattern
+        /*
+        i    i^2   i^3
+        0    0     0
+        1    1     1
+        2    4     8
+        3    9     27
+        4    16    64
+        5    25    125
+        6    36    216
+        7    49    343
+        8    64    512
+        9    81    729
+        10   100   1000
+        */
+
+        // for (let i = 0; i <= 10; i++) {
+        //     console.log(`${i}   ${i ** 2}   ${i ** 3}`)
+        // }
+
+        //7. Use for loop to iterate from 0 to 100 and print only even numbers
+        // for (let i = 0; i <= 100; i++) {
+        //     if (i % 2 == 0) {
+        //         console.log(i);
+        //     }
+        // }
+
+        //8. Use for loop to iterate from 0 to 100 and print only odd numbers
+        // for (let i = 0; i <= 100; i++) {
+        //     if (i % 2 != 0) {
+        //         console.log(i);
+        //     }
+        // }
+
+        //9. Use for loop to iterate from 0 to 100 and print only prime numbers
+        // for (let i = 0; i <= 100; i++) {
+        //     faktor = 0;
+        //     for (let j = 2; j < i; j++) {
+        //         if (i % j == 0) {
+        //             faktor = 1;
+        //             break;
+        //         }
+        //     }
+        //     if (faktor == 0) {
+        //         console.log(i);
+        //     }
+        // }
+
+
+        //10. Use for loop to iterate from 0 to 100 and print the sum of all numbers.
+        // let totalNum = 0;
+        // for (let i = 0; i <= 100; i++) {
+        //     totalNum += i
+        // }
+        // console.log(`the sum for all number from 0 to 100 is ${totalNum}`);
+
+        //11. Use for loop to iterate from 0 to 100 and print the sum of all evens and the sum of all odds.
+        function sumEvens() {
+            let evens = 0;
+            for (let i = 0; i <= 100; i++) {
+                if (i % 2 == 0) {
+                    evens += i
+                }
+            }
+            return evens;
+        }
+        function sumOdds() {
+            let evens = 0;
+            for (let i = 0; i <= 100; i++) {
+                if (i % 2 != 0) {
+                    evens += i
+                }
+            }
+            return evens;
+        }
+
+        console.log(`The sum of all evens from 0 to 100 is ${sumEvens()}. And the sum of all odds from 0 to 100 is ${sumOdds()}.`)
+
+        //12. Use for loop to iterate from 0 to 100 and print the sum of all evens and the sum of all odds. Print sum of evens and sum of odds as array
+        const arr = new Array(sumEvens(), sumOdds());
+        console.log(arr)
+
+        //13. Develop a small script which generate array of 5 random numbers
+        const randomNumber = new Array();
+        for (let i = 1; i <= 5; i++) {
+            randomNumber.push(Math.floor(Math.random() * 11));
+        }
+        console.log(randomNumber)
+
+        //14. Develop a small script which generate array of 5 random numbers and the numbers must be unique
+
+        //15. Develop a small script which generate a six characters random id:
+        function makeId(length) {
+            let result = "",
+                characters = "ABCDEFGIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+
+            for (let i = 0; i < length; i++) {
+                result += characters.charAt(Math.floor(Math.random() * characters.length))
+            }
+            return result;
+
+        }
+        console.log(makeId(6))
+    </script>
+</body>
+
+</html>

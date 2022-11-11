@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 6 Exercises 3</title>
+</head>
+
+<body>
+    <script>
+        //1. Copy countries array(Avoid mutation)
+        const countries = Array("ALBANIA", "BOLIVIA", "CANADA", "DENMARK", "ETHIOPIA", "FINLAND", "GERMANY", "HUNGARY", "IRELAND", "JAPAN", "KENYA");
+        console.log(countries);
+
+        //2.Arrays are mutable. Create a copy of array which does not modify the original. Sort the copied array and store in a variable sortedCountries
+        const copyyCountry = countries;
+        sortedCountries = copyyCountry.sort();
+        console.log(sortedCountries);
+
+        //3. Sort the webTechs array and mernStack array
+        const webTechs = [
+            'HTML',
+            'CSS',
+            'JavaScript',
+            'React',
+            'Redux',
+            'Node',
+            'MongoDB'
+        ]
+
+        const mernStack = ['MongoDB', 'Express', 'React', 'Node']
+        const sortWebTechs = webTechs.sort();
+        const sortMern = mernStack.sort();
+
+        //4. Extract all the countries contain the word 'land' from the countries array and print it as array
+        const land = [];
+        countries.forEach(c => {
+            if (c.includes("LAND")) {
+                land.push(c);
+            }
+        })
+
+        //5. Find the country containing the hightest number of characters in the countries array
+        const length = new Array();
+        countries.forEach(c => {
+            length.push(c.length);
+        })
+        let max = Math.max(...length);
+        let result = [];
+        countries.forEach(c => {
+            if (c.length == max) {
+                result.push(c)
+            };
+        })
+
+        console.log(result);
+        //6.Extract all the countries contain the word 'land' from the countries array and print it as array
+
+        //7. Extract all the countries containing only four characters from the countries array and print it as array
+        let chart4 = Array();
+        for (let i = 0; i < countries.length; i++) {
+            if (countries[i].length == 4) {
+                chart4.push(i);
+            }
+        }
+        console.log(chart4);
+
+        //8. Extract all the countries containing two or more words from the countries array and print it as array
+        const twoWords = [];
+        for (let i = 0; i < countries.length; i++) {
+            twoWords.push([countries[i], countries[countries.length - i]])
+        }
+        console.log(twoWords);
+
+        //9. Reverse the countries array and capitalize each country and stored it as an array
+        const reversecountries = countries.reverse();
+        const toLower = reversecountries.map(x => x.toLowerCase())
+        const capital = toLower.map(c => c.slice(0, 1).toUpperCase() + c.substr(1))
+        console.log(capital);
+
+    </script>
+</body>
+
+</html>
